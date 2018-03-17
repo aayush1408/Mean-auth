@@ -13,6 +13,9 @@ app.use('/user', user);
 //Cors middleware
 app.use(cors());
 
+//Set up static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 //Bodyparser 
 app.use(bodyParser.json());
 
