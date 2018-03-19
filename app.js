@@ -39,8 +39,8 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //setup home route 
-app.use('/', (req, res) => {
-    res.send('Home');
+app.get('*', (req, res) => {
+    res.sendFile('public/index.html', { root: __dirname });
 });
 
 const port = process.env.PORT || 3000;
